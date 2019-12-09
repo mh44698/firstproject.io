@@ -67,11 +67,14 @@ body {
     grid-row: 2 ;
 }
 
-.hngmanpic{
+.hngmanpic {
     max-width: 30px;
-    max-height: 30px;
+    max-height: 200px;
 }
-./*
+img {
+    width: 200%;
+}
+/* 
 //Styling the unordered list
 letters.style.margin = "15px";
 letters.style.padding = "15px";
