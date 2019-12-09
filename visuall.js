@@ -7,6 +7,8 @@ div.innerHTML += content;
 Array.from(document.getElementsByClassName("letter-button"))
   .forEach((e) => e.addEventListener('click', () => output.innerHTML += e.value));
 
+  
+
 
 
 

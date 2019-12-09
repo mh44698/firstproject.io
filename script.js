@@ -1,60 +1,47 @@
 var words = [
-    "javascript",
-    "monkey",
-    "amazing",
-    "pancake",
-    "galvainze",
-    "cohort",
-    "concatenate",
-    "iteration",
-    "index",
-    "code",
-    "angular",
-    "react",
-    "python"
+    "lumber",
+    "act",
+    "mouth",
+    "scarf",
+    "hesitant",
+    "mysterious",
+    "makeshift",
+    "depend",
+    "acoustics",
+    "steel",
     ];
-    
+    /////// Took the random from a website.
+    /////////////////// Global Variables //////////
     // Pick a random word
-    var word = words[Math.floor(Math.random() * words.length)];
+        var word = words[Math.floor(Math.random() * words.length)]
+//     https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Math/random
     
-    // Set up the amswer answerArrayvar answerArray = [];
-    // for (var i = 0; i < word.length; i++) {
-    //   answerArray[i] = "_";
-    // }
-    
-    var remainingLetters = word.length;
-    
-    // The game loop
+        var remLetters = word.length;
+        var badGuess // put a bad guess here 
+        var goodGuess // put a good guess here
+
+    ///////////////////Game Loop //////////////////
     while (remainingLetters > 0) {
-        // Show the player their progress alert(answerArray.join(" "));
-        
-        // Get a guess from the player
-        
-//this needs to change        var guess = prompt("Guess a letter, or click Cancel to stop playing.");
         if (guess === null) {
         // Exit the game loop
         break;
-       } else if (guess.length !== 1) {
-//this needs to change         alert("Please enter a single letter.");
-        } else {
-        // Update the game state with the guess
+       } else {
+//this needs to change input from clicking on the board is needed, and call the solver function
         
         for (var j = 0; j < word.length; j++) {
           if (word[j] === guess) {
             answerArray[j] = guess; remainingLetters--;
-          }
+                }
         }
-        }
+}
+////////// End of game loop //////////////////////
+        ////////// Start of modal conditions //////////////////////
+    
+
+
+        ////////// End  of modal conditions //////////////////////
         
-        // The end of the game loop
-        }
-        
-        // Show the answer and congratulate the player
-        
-//this needs to change         alert(answerArray.join(" "));
-//this needs to change         alert("Good job! The answer was " + word);
-        
-        // Write your functions here
+////////////// Functions ///////////
 
 
 var word = pickWord();
@@ -64,9 +51,14 @@ var pickWord = function () {
 // Return a random word
 };
 
-var setupAnswerArray = function (word) {
-// Return the answer array
-};
+var solver = function (word) {
+        //if input letter matches a letter on the soloution populate the box and disable the box.
+        //run this for each character in the word string.
+        //if it doesn't match then add it to the wrongGuess array.
+        };
+        
+
+
 var showPlayerProgress = functin (answerArray)
 {
 //Use alert to show the player their progress
@@ -81,20 +73,22 @@ var updateGameState = function (guess, word, answerArray) {
 };
 
 
-var showAnswerAndCongratulatePlayer = function (answerArray) {
-    // Use alert to show the answer and congratulate the player
-    };
-    while (remainingLetters > 0) {
-    showPlayerProgress(answerArray);
-    var guess = getGuess();
-    if (guess === null) {
-    break;
-    } else if (guess.length !== 1) {
-    alert("Please enter a single letter.");
-    } else {
-    var correctGuesses = updateGameState(guess, word, answerArray);
-    remainingLetters -= correctGuesses;
-    }
-    }
+
+// var showAnswerAndCongratulatePlayer = function (answerArray) {
+//     // Use alert to show the answer and congratulate the player
+//     };
+//     while (remainingLetters > 0) {
+//     showPlayerProgress(answerArray);
+//     var guess = getGuess();
+//     if (guess === null) {
+//     break;
+//     } else if (guess.length !== 1) {
+//     alert("Please enter a single letter.");
+//     } else {
+//     var correctGuesses = updateGameState(guess, word, answerArray);
+//     remainingLetters -= correctGuesses;
+//     }
+//     }
     
-    showAnswerAndCongratulatePlayer(answerArray);
+//     showAnswerAndCongratulatePlayer(answerArray);
+
