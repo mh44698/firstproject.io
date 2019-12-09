@@ -1,0 +1,54 @@
+body {
+    margin: auto;
+    align-content: center;
+    background-color: whitesmoke;
+    background-image: linear-gradient(red, yellow);
+}
+
+.container {
+    align-content: center;
+}
+
+.badge-secondary {
+    margin: auto;
+    align-self: auto;
+    font-size: 50px;
+    font-style: italic;
+}
+
+.row    {
+    align-self: auto;
+}
+
+.game-over-won{
+    opacity: 0.0;
+}
+
+.game-over-won{
+    opacity: 0.0;
+}
+
+.game-over-lost{
+    opacity: 0.0;
+}
+./*
+//Styling the unordered list
+letters.style.margin = "15px";
+letters.style.padding = "15px";
+letters.style.display = "table";
+letters.style.textAlign = "center";
+letters.style.margin = "auto";
+
+//Styling the list items
+list.style.float = "left";
+list.style.margin = "1px";
+list.style.width = "35px";
+list.style.height = "30px";
+list.style.background = "#fff";
+list.style.color = "#00cc00";
+list.style.fontSize = "18px";
+list.style.listStyle = "none";
+list.style.borderRadius = "5px";
+list.style.paddingTop = "10px";
+list.style.cursor = "pointer";
+list.style.border = "solid 1px #fff";

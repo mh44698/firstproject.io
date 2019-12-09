@@ -1,0 +1,24 @@
+First a fading background
+have a box full of unused body parts
+have a pole and nuse static on page
+have shadow boxes for letters 
+have a button to reset game
+have an alphabet class that has a grey out after select feature
+Logic -
+    happy path:
+    once the letter is selected populate the corresponding 
+    box with the selection.
+        on win populate a modle with a free car pic.
+    sad path:
+    if an letter is selected without a place in the word then move first part to the hanging man.
+        on lose populate a modle with a dead man face.
+
+Bonus feature:
+    have a cheat button that puts the word up for .5 seconds
+
+    phone a friend feature that randomly takes away 3 letters
+
+    Use an API to get random words
+    Select a category for the word on game open.
+
+
