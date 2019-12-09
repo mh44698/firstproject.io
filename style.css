@@ -5,6 +5,31 @@ body {
     background-image: linear-gradient(red, yellow);
 }
 
+h1 {
+    font-size: smaller;
+}
+
+.hngmanpic {
+    max-width: 30px;
+    max-height: 200px;
+    text-align: center;
+}
+img {
+    width: 200%;
+    align-items: center;
+}
+
+.center {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.pictureframe{
+    display: flex;
+    justify-content: center;
+}
+
 .container {
     align-content: center;
     
@@ -32,7 +57,7 @@ body {
 
 .btn-group {
 
-    max-width: 175px;
+    /* max-width: 175px; */
 
 }
 
@@ -48,32 +73,35 @@ body {
     border-radius: 5px;
     padding: 20px;
     font-size: 150%;
-
+    width: auto;
+    height: auto;
 }
 
 .a {
     grid-column: 1 / span 2;
+    height: auto;
+    width: auto;
 }
 .b {
     grid-column: 3 ;
     grid-row: 1 / span 2;
+    width: auto;
+    height: auto;
 }
 .c {
     grid-column: 1 ;
     grid-row: 2 ;
+    width: auto;
+    height: auto;
 }
 .d {
     grid-column: 2 ;
     grid-row: 2 ;
+    width: auto;
+    height: auto;
 }
 
-.hngmanpic {
-    max-width: 30px;
-    max-height: 200px;
-}
-img {
-    width: 200%;
-}
+
 /* 
 //Styling the unordered list
 letters.style.margin = "15px";

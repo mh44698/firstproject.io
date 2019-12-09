@@ -14,6 +14,7 @@ var words = [
     /////////////////// Global Variables //////////
     // Pick a random word
         var word = words[Math.floor(Math.random() * words.length)]
+        console.log(word)
 //     https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Math/random
     
         var remLetters = word.length;
@@ -31,9 +32,11 @@ var words = [
         for (var j = 0; j < word.length; j++) {
           if (word[j] === guess) {
             answerArray[j] = guess; remainingLetters--;
+                        }
                 }
         }
 }
+
 ////////// End of game loop //////////////////////
         ////////// Start of modal conditions //////////////////////
     
@@ -42,10 +45,30 @@ var words = [
         ////////// End  of modal conditions //////////////////////
         
 ////////////// Functions ///////////
+//New Game
+//Restart Game
+//Cancel Game
+//Quick Help
+//ScreenMistakes
+//ScreenCorrects
+//ScreenPopulateSolution
+//ScreenUpdateImage
 
+//ScreenPopulateSolution
+function ScreenPopulateSolution(){
+for (let index = 0; index < word.length; index++) {
+       
+       var element = document.getElementsByClassName("solutionGroup")
+       console.log(element)
+       var node = document.createTextNode("This is New")
+       element.appendChild(node)
+       console.log(word.length)
+        }
+} // this will need to update solutionGroup
+ScreenPopulateSolution()
 
-var word = pickWord();
-var answerArray = setupAnswerArray(word);
+//var word = pickWord();
+//var answerArray = setupAnswerArray(word);
 var remainingLetters = word.length;
 var pickWord = function () {
 // Return a random word
@@ -59,18 +82,18 @@ var solver = function (word) {
         
 
 
-var showPlayerProgress = functin (answerArray)
-{
+//var showPlayerProgress = functin (answerArray)
+//{
 //Use alert to show the player their progress
-};
+//};
 
-var getGuess = function () {
+//var getGuess = function () {
 // Use prompt to get a guess
-};
+//};
 
-var updateGameState = function (guess, word, answerArray) {
+//var updateGameState = function (guess, word, answerArray) {
 // Update answerArray and return a number showing how many times the guess appears in the word so remainingLetters can be updated
-};
+//};
 
 
 
@@ -90,5 +113,3 @@ var updateGameState = function (guess, word, answerArray) {
 //     }
 //     }
     
-//     showAnswerAndCongratulatePlayer(answerArray);
-

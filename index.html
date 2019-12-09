@@ -1,33 +1,34 @@
 <html>
   <head>
     <meta charset="utf-8">
-    <title>Holmes's Hangman!</title>
+    <title>Holmes' Hangman!</title>
     <link rel="stylesheet" href="style.css">
   </head>
   <body>
-    <h1 id="main-heading"><center>Holmes's Hangman!</center></h1>
+    <h1><center>Holmes' Hangman!</center></h1>
 <hr></hr>
-
+<div class="pictureframe">
 <div class="hngmanpic">
-  <img src="/hngmanimg/1.jpeg" alt="Dead Man in the making">
-</div>
-
+  <img src="10.jpeg" alt="Dead Man in the making" class="center">
+  </div>
+ 
+</div> <div class="solutionGroup">Solution here</div>
 <hr></hr
     <div class="container">
-       
           </div>
           <div class="wrapper">
-            <div class="box a">Choose your letters wisely
+            <div class="box a">Letter Bank
               <div class="row">
                 <div class="btn-group" role="group" aria-label="Basic example" id="buttonGroup">
             </div></div></div>
-            <div class="box b">B
-              <Button>Stop the madness</Button>
-              <Button>WOF Help</Button>
+            <div class="box b">
+              <button>New Game</button>
+              <button>Restart Game</button>
+              <Button>Cancel Game</Button><br>
               <button>Quick Help</button>
               <hr></hr>
               Errors left:<br>
-              9 <!--    this will need to called by js -->
+              <div class="errors">9</div> <!--    this will need to called by js -->
             </div>
             <div class="box c">C</div>
             <div class="box d">D</div>
@@ -39,7 +40,6 @@
       <p class="game-over-won">You won!</p>
       <p class="game-over-lost">You lost!</p>
   <script text="visuall.js" src="visuall.js"></script> 
-  <!-- -->
       <script text="script.js" src="script.js"></script>
  </body>
 </html>
