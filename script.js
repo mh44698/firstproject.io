@@ -1,3 +1,4 @@
+const letters = ['a','b','c','d','e','f','g','h','i','j','k','l','m','n','o','p','q','r','s','t','u','v','w','x','y','z']
 var words = [
     "lumber",
     "act",
@@ -10,6 +11,7 @@ var words = [
     "acoustics",
     "steel",
     ];
+const pics = ['1.jpeg','2.jpeg','3.jpeg','4.jpeg','5.jpeg','6.jpeg','7.jpeg','8.jpeg','9.jpeg','10.jpeg']
     /////// Took the random from a website.
     /////////////////// Global Variables //////////
     // Pick a random word
@@ -18,14 +20,15 @@ var words = [
         var remainingLetters = word.length;
         var badGuess // put a bad guess here 
         var goodGuess // put a good guess here
+        var errorCounter
 
-
+// console.log(pics[1])
     ///////////////////Game Loop //////////////////
     while (remainingLetters < 0) {
-        // if()
+        // if clicked letter matches the word 
+        //add event listener to 
         // Exit the game loop
-        break;
-//        } else {
+
 //this needs to change input from clicking on the board is needed, and call the solver function
         
         for (var j = 0; j < word.length; j++) {
@@ -45,16 +48,16 @@ var words = [
         
 ////////////// Functions ///////////
 //New Game
-location.reload()
-//Restart Game
-location.reload()
-//Cancel Game
-
+function newGamed(){
+        location.reload()
+}
 //Quick Help
-//ScreenMistakes
-//ScreenCorrects
-//ScreenPopulateSolution
-//ScreenUpdateImage
+function qhelp(){
+         document.getElementById("quickHelp").innerHTML = word
+        setTimeout(clearing, 250)
+        }
+function clearing(){   
+        document.getElementById("quickHelp").innerHTML = ""}
 
 //ScreenPopulateSolution - This populates the empty boxes
 function ScreenPopulateSolution(){
@@ -62,17 +65,39 @@ for (let index = 0; index < word.length; index++) {
        var iDiv = document.createElement('div');
        iDiv.id = 'block'+[index];
        iDiv.className = 'block';
-       console.log('iDiv',iDiv)
+       //console.log('iDiv',iDiv)
        // Then append the whole thing onto the body
        document.querySelector('.solutionGroup').appendChild(iDiv);
-       console.log(document.querySelector('.solutionGroup'))
+       //console.log(document.querySelector('.solutionGroup'))
         }
 } 
 ScreenPopulateSolution()
 
-//var word = pickWord();
-//var answerArray = setupAnswerArray(word);
 
+////// input listener ///////
+let elementsArray = document.querySelectorAll(".alpha");
+function getLetter(letter){
+elementsArray.forEach(function(elem) {
+        let elementsArray = document.querySelectorAll(".alpha");
+        elem.addEventListener("click", function(e) {  
+        // console.log("elem",e)  
+        letter = e.target.textContent 
+        // if word contains letter show position
+        if(word.includes(letter)){
+                console.log("winner winner chicken dinner")
+        }else{
+                errorCounter ++
+                if (errorCounter < 9
+        
+        }
+        //console.log("letter",letter)
+        })
+       // elem.querySelector("click",).disabled = true
+})
+}
+//console.log(getLetter())
+
+getLetter()
 
 
 var solver = function (word) {
@@ -83,14 +108,8 @@ var solver = function (word) {
         
 
 
-//var showPlayerProgress = functin (answerArray)
-//{
-//Use alert to show the player their progress
-//};
 
-//var getGuess = function () {
-// Use prompt to get a guess
-//};
+
 
 //var updateGameState = function (guess, word, answerArray) {
 // Update answerArray and return a number showing how many times the guess appears in the word so remainingLetters can be updated
@@ -98,22 +117,17 @@ var solver = function (word) {
 
 
 
-// var showAnswerAndCongratulatePlayer = function (answerArray) {
-//     // Use alert to show the answer and congratulate the player
-//     };
-//     while (remainingLetters > 0) {
-//     showPlayerProgress(answerArray);
-//     var guess = getGuess();
-//     if (guess === null) {
-//     break;
-//     } else if (guess.length !== 1) {
-//     alert("Please enter a single letter.");
-//     } else {
-//     var correctGuesses = updateGameState(guess, word, answerArray);
-//     remainingLetters -= correctGuesses;
-//     }
-//     }
+
+
     
+/// how to change a Pic in HTML
+// function changePic(){
+//         document.getElementsByClassName("hmpic").src = "1.jpeg";
+//         console.log("changePic",changePic)
+// }
+// changePic()
+
+
 ////// Sources
 //     https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Math/random
 
@@ -121,3 +135,4 @@ var solver = function (word) {
 
 //https://teamtreehouse.com/community/elementappendchild-returning-error-appendchild-is-not-a-function
 
+// https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/includes
