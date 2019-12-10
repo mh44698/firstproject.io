@@ -101,6 +101,19 @@ img {
     height: auto;
 }
 
+.block {
+    background-color: yellow;
+    width: 20px;
+    height: 20px;
+    display: inline-block;
+    margin: 10px 5px 10px 5px;
+}
+
+.quickHelp {
+    background-color: blue;
+    height: 10px;
+}
+
 
 /* 
 //Styling the unordered list

@@ -15,18 +15,17 @@ var words = [
     // Pick a random word
         var word = words[Math.floor(Math.random() * words.length)]
         console.log(word)
-//     https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Math/random
-    
-        var remLetters = word.length;
+        var remainingLetters = word.length;
         var badGuess // put a bad guess here 
         var goodGuess // put a good guess here
 
+
     ///////////////////Game Loop //////////////////
-    while (remainingLetters > 0) {
-        if (guess === null) {
+    while (remainingLetters < 0) {
+        // if()
         // Exit the game loop
         break;
-       } else {
+//        } else {
 //this needs to change input from clicking on the board is needed, and call the solver function
         
         for (var j = 0; j < word.length; j++) {
@@ -35,7 +34,7 @@ var words = [
                         }
                 }
         }
-}
+
 
 ////////// End of game loop //////////////////////
         ////////// Start of modal conditions //////////////////////
@@ -46,33 +45,35 @@ var words = [
         
 ////////////// Functions ///////////
 //New Game
+location.reload()
 //Restart Game
+location.reload()
 //Cancel Game
+
 //Quick Help
 //ScreenMistakes
 //ScreenCorrects
 //ScreenPopulateSolution
 //ScreenUpdateImage
 
-//ScreenPopulateSolution
+//ScreenPopulateSolution - This populates the empty boxes
 function ScreenPopulateSolution(){
 for (let index = 0; index < word.length; index++) {
-       
-       var element = document.getElementsByClassName("solutionGroup")
-       console.log(element)
-       var node = document.createTextNode("This is New")
-       element.appendChild(node)
-       console.log(word.length)
+       var iDiv = document.createElement('div');
+       iDiv.id = 'block'+[index];
+       iDiv.className = 'block';
+       console.log('iDiv',iDiv)
+       // Then append the whole thing onto the body
+       document.querySelector('.solutionGroup').appendChild(iDiv);
+       console.log(document.querySelector('.solutionGroup'))
         }
-} // this will need to update solutionGroup
+} 
 ScreenPopulateSolution()
 
 //var word = pickWord();
 //var answerArray = setupAnswerArray(word);
-var remainingLetters = word.length;
-var pickWord = function () {
-// Return a random word
-};
+
+
 
 var solver = function (word) {
         //if input letter matches a letter on the soloution populate the box and disable the box.
@@ -113,3 +114,10 @@ var solver = function (word) {
 //     }
 //     }
     
+////// Sources
+//     https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Math/random
+
+//https://www.computerhope.com/issues/ch001709.htm
+
+//https://teamtreehouse.com/community/elementappendchild-returning-error-appendchild-is-not-a-function
+
