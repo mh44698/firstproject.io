@@ -1,25 +1,34 @@
 const letters = ['a','b','c','d','e','f','g','h','i','j','k','l','m','n','o','p','q','r','s','t','u','v','w','x','y','z']
-var words = [
-    "lumber",
-    "act",
-    "mouth",
-    "scarf",
-    "hesitant",
-    "mysterious",
-    "makeshift",
-    "depend",
-    "acoustics",
-    "steel",
-    ];
+//fetchRandomWord()
+//var words = []
+//     "lumber",
+//     "act",
+//     "mouth",
+//     "scarf",
+//     "hesitant",
+//     "mysterious",
+//     "makeshift",
+//     "depend",
+//     "acoustics",
+//     "steel",
+//     ];
+
 const pics = ['1.jpeg','2.jpeg','3.jpeg','4.jpeg','5.jpeg','6.jpeg','7.jpeg','8.jpeg','9.jpeg','10.jpeg']
     /////// Took the random from a website.
     /////////////////// Global Variables //////////
     // Pick a random word
-        var word = words[Math.floor(Math.random() * words.length)]
-        console.log(word)
+
+     //   var word = words[Math.floor(Math.random() * words.length)]
+      //  console.log(word)
+       // sleep(4)
+        word = ""
+        fetchRandomWord(word)
+
+        console.log("this is word",word)
         var remainingLetters = word.length;
         var errorCounter = 0
         var goodCounter = 0
+       
 
 ////////// Start of game loop //////////////////////
 ////// input listener ///////
@@ -50,9 +59,7 @@ elementsArray.forEach(function(elem) {
                                         clearkeyboard("You Win!!!!")
                                         // No more errors left
                                         var div = document.querySelector(".errors")
-                                        div.innerText = ""
-                                        // insert winning modal here
-                                        
+                                        div.innerText = ""                  
                                       }
                                 }
                         }
@@ -129,14 +136,29 @@ function clearkeyboard(status){
                  
 }
 
+////////////////// API - Random Words ///////////////
 
+function fetchRandomWord(){
+      //api key SRPEA3ZK
+      //https://random-word-api.herokuapp.com//word?key=NTLFWNSO&number=10
+    
+        let randomWord = ` https://random-word-api.herokuapp.com//word?key=NTLFWNSO&number=1`
+        fetch(randomWord)
+        .then(res => res.json())
+        .then(word => console.log(word))
+        let word = fetch.then()
+        console.log(word)
+         }
+     
+
+//////////////////// end of random words ////////////////
 
 
 // To do' :
-// Disable keystorkes/clicking on win/loose
-// KeyStrokes
-// Modals
-// Kenny says Api
+// Disable keystorkes/clicking on win/loose // Done
+// KeyStrokes - possible improvement
+// Modals // Not going to do this as of now.  I like the clean page.
+// Kenny says Api - Next working part
 
 
 ////// Sources
@@ -147,3 +169,5 @@ function clearkeyboard(status){
 //https://teamtreehouse.com/community/elementappendchild-returning-error-appendchild-is-not-a-function
 
 // https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/includes
+
+// access keys https://stackoverflow.com/questions/5061353/how-to-create-a-keyboard-shortcut-for-an-input-button/5062680
