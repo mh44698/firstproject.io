@@ -79,13 +79,14 @@ img {
     margin: 10px 5px 10px 5px;
     display: flex;
     flex-wrap: wrap;
-
+    background-color: brown;
 }
 .b {
     grid-column: 3 ;
     grid-row: 1 / span 2;
     width: auto;
     height: auto;
+    
 }
 .c {
     grid-column: 1 ;

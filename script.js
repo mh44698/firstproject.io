@@ -34,7 +34,7 @@ elementsArray.forEach(function(elem) {
         e.target.classList.add("buttonDisable")
         // if word contains letter show position
         if(word.includes(letter)){
-                console.log("choose correctly")
+               // console.log("choose correctly")
                 for (let index = 0; index < word.length; index++) {
                         if(letter == word[index]){
                                 goodCounter ++
@@ -66,7 +66,7 @@ elementsArray.forEach(function(elem) {
                 console.log("Pic Address", picInc)
                 document.querySelector(".hmpic").src = picInc;
                 if(errorLeft === 0){
-                        clearkeyboard("You Lose!!!!")
+                clearkeyboard("You Lose!!!!")
                   console.log("its over sucka insert loosing modal here")  
                  // insert Loosing modal here
                 } 
