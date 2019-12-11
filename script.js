@@ -1,16 +1,16 @@
 const letters = ['a','b','c','d','e','f','g','h','i','j','k','l','m','n','o','p','q','r','s','t','u','v','w','x','y','z']
-var words = [
-    "lumber",
-    "act",
-    "mouth",
-    "scarf",
-    "hesitant",
-    "mysterious",
-    "makeshift",
-    "depend",
-    "acoustics",
-    "steel",
-    ];
+var words = ["abc"]
+//     "lumber",
+//     "act",
+//     "mouth",
+//     "scarf",
+//     "hesitant",
+//     "mysterious",
+//     "makeshift",
+//     "depend",
+//     "acoustics",
+//     "steel",
+//     ];
 const pics = ['1.jpeg','2.jpeg','3.jpeg','4.jpeg','5.jpeg','6.jpeg','7.jpeg','8.jpeg','9.jpeg','10.jpeg']
     /////// Took the random from a website.
     /////////////////// Global Variables //////////
@@ -20,7 +20,8 @@ const pics = ['1.jpeg','2.jpeg','3.jpeg','4.jpeg','5.jpeg','6.jpeg','7.jpeg','8.
         var remainingLetters = word.length;
         var badGuess // put a bad guess here 
         var goodGuess // put a good guess here
-        var errorCounter
+        var errorCounter = 0
+        var goodCounter = 0
 
 // console.log(pics[1])
     ///////////////////Game Loop //////////////////
@@ -54,7 +55,7 @@ function newGamed(){
 //Quick Help
 function qhelp(){
          document.getElementById("quickHelp").innerHTML = word
-        setTimeout(clearing, 250)
+        setTimeout(clearing, 50)
         }
 function clearing(){   
         document.getElementById("quickHelp").innerHTML = ""}
@@ -82,13 +83,47 @@ elementsArray.forEach(function(elem) {
         elem.addEventListener("click", function(e) {  
         // console.log("elem",e)  
         letter = e.target.textContent 
+        e.target.disabled = true
         // if word contains letter show position
         if(word.includes(letter)){
+                goodCounter ++
                 console.log("winner winner chicken dinner")
+                console.log(goodCounter)
+                console.log(letter)
+                // Possibly put in a while loop for multiple redunants
+                for (let index = 0; index < word.length; index++) {
+                        if(letter == word[index]){
+                                
+                                concat = `.block${index}`
+                                console.log(concat)
+
+
+                                var position = document.querySelector(".solutionGroup")
+                                console.log("this is position",position)
+                                // position.innerText = letter
+                                /// MORE CODE NEEDED TO PUSH TO HTML
+                                if(word.length == goodCounter){
+                                        console.log("You Win! Have a cookie! Insert winning modal here")     
+                                      }
+                        }
+                        
+                }
+                //Include logic to find all letters in the string that equal letters
+                        // Create a loop to include all letters
+
         }else{
-                errorCounter ++
-                if (errorCounter < 9
-        
+               errorCounter ++
+               console.log("error",errorCounter)
+                errorLeft = 9 - errorCounter
+                var div = document.querySelector(".errors")
+                div.innerText = errorLeft
+                let picInc = `${errorCounter+1}.jpeg`
+                console.log("Pic Address", picInc)
+                document.querySelector(".hmpic").src = picInc;
+                if(errorLeft === 0){
+                  console.log("its over sucka insert loosing modal here")     
+                }
+                //console.log("error Left", picInc)
         }
         //console.log("letter",letter)
         })

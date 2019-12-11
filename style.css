@@ -17,6 +17,8 @@ h1 {
 img {
     width: 200%;
     align-items: center;
+    border: black;
+    border-block-end-width: 1px;
 }
 .quickHelp{
     text-align: center;
