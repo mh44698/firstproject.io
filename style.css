@@ -50,15 +50,6 @@ img {
     align-self: auto;
 }
 
-.game-over-won
-{
-    /* opacity: 0.0; */
-}
-
-.game-over-lost{
-    /* opacity: 0.0; */
-}
-
 .wrapper {
     display: grid;
     grid-gap: 10px;
@@ -117,10 +108,15 @@ img {
     height: 20px;
     display: inline-block;
     margin: 10px 5px 10px 5px;
+    text-align: center;
 }
 
 .errors {
     text-align: center;
+}
+
+.buttonDisable {
+    background-color: black;
 }
 /* 
 //Styling the unordered list
