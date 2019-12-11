@@ -34,13 +34,10 @@ elementsArray.forEach(function(elem) {
         e.target.classList.add("buttonDisable")
         // if word contains letter show position
         if(word.includes(letter)){
-                goodCounter ++
-                console.log("winner winner chicken dinner")
-                console.log(goodCounter)
-                console.log(letter)
-                // Possibly put in a while loop for multiple redunants
+                console.log("choose correctly")
                 for (let index = 0; index < word.length; index++) {
                         if(letter == word[index]){
+                                goodCounter ++
                                 concat = `#block${index}`
                                 console.log(concat)
                                 var position = document.querySelector(concat)
@@ -50,7 +47,12 @@ elementsArray.forEach(function(elem) {
                                         console.log("You Win! Have a cookie! Insert winning modal here")  
                                         // disable all keys
                                         // display no keys and populate message.
-                                        //Errors left = Null
+                                        clearkeyboard("You Win!!!!")
+                                        // No more errors left
+                                        var div = document.querySelector(".errors")
+                                        div.innerText = ""
+                                        // insert winning modal here
+                                        
                                       }
                                 }
                         }
@@ -64,8 +66,9 @@ elementsArray.forEach(function(elem) {
                 console.log("Pic Address", picInc)
                 document.querySelector(".hmpic").src = picInc;
                 if(errorLeft === 0){
+                        clearkeyboard("You Lose!!!!")
                   console.log("its over sucka insert loosing modal here")  
-                  return   
+                 // insert Loosing modal here
                 } 
                 //console.log("error Left", picInc)
         }
@@ -74,8 +77,6 @@ elementsArray.forEach(function(elem) {
        // elem.querySelector("click",).disabled = true
 })
 }
-//console.log(getLetter())
-
 getLetter()
 
 
@@ -95,7 +96,7 @@ function newGamed(){
 //Quick Help
 function qhelp(){
          document.getElementById("quickHelp").innerHTML = word
-        setTimeout(clearing, 2000)
+        setTimeout(clearing, 100)
         }
 function clearing(){   
         document.getElementById("quickHelp").innerHTML = ""}
@@ -112,6 +113,21 @@ for (let index = 0; index < word.length; index++) {
         }
 } 
 ScreenPopulateSolution()
+
+function clearkeyboard(status){
+                var idiv = document.querySelector('.keyboardletters')
+                for (let idx = 0; idx < 52; idx++) {
+                var idiv = document.querySelector('.keyboardletters')
+                idiv.removeChild(idiv.firstChild)
+                }
+                var iDiv = document.createElement('div')
+                iDiv.id = 'endgameText'
+                iDiv.className = 'endgameText'
+                document.querySelector('.keyboardletters').appendChild(iDiv)
+                document.getElementById("endgameText").innerHTML = status
+                console.log(document.querySelector('#endgameText'))
+                 
+}
 
 
 
