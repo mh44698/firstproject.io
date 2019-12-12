@@ -1,31 +1,45 @@
 const letters = ['a','b','c','d','e','f','g','h','i','j','k','l','m','n','o','p','q','r','s','t','u','v','w','x','y','z']
-//fetchRandomWord()
-//var words = []
-//     "lumber",
-//     "act",
-//     "mouth",
-//     "scarf",
-//     "hesitant",
-//     "mysterious",
-//     "makeshift",
-//     "depend",
-//     "acoustics",
-//     "steel",
-//     ];
+// fetchRandomWord()
+var words = [
+    "lumber",
+    "act",
+    "mouth",
+    "scarf",
+    "hesitant",
+    "mysterious",
+    "makeshift",
+    "depend",
+    "acoustics",
+    "steel",
+    ];
 
 const pics = ['1.jpeg','2.jpeg','3.jpeg','4.jpeg','5.jpeg','6.jpeg','7.jpeg','8.jpeg','9.jpeg','10.jpeg']
     /////// Took the random from a website.
     /////////////////// Global Variables //////////
     // Pick a random word
-
-     //   var word = words[Math.floor(Math.random() * words.length)]
+    var remainingLetters = 0;
+    //getting a new API key https://random-word-api.herokuapp.com/key?
+            let randomWord = ` https://random-word-api.herokuapp.com//word?key=YT0FX98V&number=1`
+        fetch(randomWord)
+        .then(res => res.json())
+        .then(word => {
+                // comment this next line to see if API key if void.
+                word = word[0]
+                remainingLetters = word.length;
+                qhelp(word)
+                getLetter(word)
+                ScreenPopulateSolution(word)
+                console.log(word)
+        })
+               
+        // var word = words[Math.floor(Math.random() * words.length)]
       //  console.log(word)
        // sleep(4)
-        word = ""
-        fetchRandomWord(word)
-
-        console.log("this is word",word)
-        var remainingLetters = word.length;
+        //word = ""
+       // fetchRandomWord()
+        
+  //      console.log("this is word",word)
+        
         var errorCounter = 0
         var goodCounter = 0
        
@@ -33,12 +47,13 @@ const pics = ['1.jpeg','2.jpeg','3.jpeg','4.jpeg','5.jpeg','6.jpeg','7.jpeg','8.
 ////////// Start of game loop //////////////////////
 ////// input listener ///////
 let elementsArray = document.querySelectorAll(".alpha");
-function getLetter(letter){
+function getLetter(word){
 elementsArray.forEach(function(elem) {
+        
         let elementsArray = document.querySelectorAll(".alpha");
         elem.addEventListener("click", function(e) {  
         // console.log("elem",e)  
-        letter = e.target.textContent 
+        var letter = e.target.textContent 
         e.target.disabled = true
         e.target.classList.add("buttonDisable")
         // if word contains letter show position
@@ -84,7 +99,7 @@ elementsArray.forEach(function(elem) {
        // elem.querySelector("click",).disabled = true
 })
 }
-getLetter()
+// getLetter()
 
 
 
@@ -101,7 +116,7 @@ function newGamed(){
         location.reload()
 }
 //Quick Help
-function qhelp(){
+function qhelp(word){
          document.getElementById("quickHelp").innerHTML = word
         setTimeout(clearing, 100)
         }
@@ -109,17 +124,20 @@ function clearing(){
         document.getElementById("quickHelp").innerHTML = ""}
 
 //ScreenPopulateSolution - This populates the empty boxes
-function ScreenPopulateSolution(){
+function ScreenPopulateSolution(word){
+        
+        
+        console.log(word.length)
 for (let index = 0; index < word.length; index++) {
        var iDiv = document.createElement('div');
        iDiv.id = 'block'+[index];
        iDiv.className = 'block';
-       //console.log('iDiv',iDiv)
+       console.log('iDiv',index)
        // Then append the whole thing onto the body
        document.querySelector('.solutionGroup').appendChild(iDiv);
         }
 } 
-ScreenPopulateSolution()
+// ScreenPopulateSolution()
 
 function clearkeyboard(status){
                 var idiv = document.querySelector('.keyboardletters')
@@ -138,17 +156,16 @@ function clearkeyboard(status){
 
 ////////////////// API - Random Words ///////////////
 
-function fetchRandomWord(){
-      //api key SRPEA3ZK
-      //https://random-word-api.herokuapp.com//word?key=NTLFWNSO&number=10
+// function fetchRandomWord(word){
+//       //api key SRPEA3ZK
+//       //https://random-word-api.herokuapp.com//word?key=EMP9J64T&number=10
     
-        let randomWord = ` https://random-word-api.herokuapp.com//word?key=NTLFWNSO&number=1`
-        fetch(randomWord)
-        .then(res => res.json())
-        .then(word => console.log(word))
-        let word = fetch.then()
-        console.log(word)
-         }
+//         let randomWord = ` https://random-word-api.herokuapp.com//word?key=EMP9J64T&number=1`
+//         fetch(randomWord)
+//         .then(res => res.json())
+//         .then(word => console.log(word))
+//         console.log(word)
+//          }
      
 
 //////////////////// end of random words ////////////////
