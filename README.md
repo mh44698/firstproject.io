@@ -2,30 +2,46 @@
 This is the first GA project - Hang Man
 
 What makes your project stand out?
+I have a rather simple code to sort through good guesses and bad guess.  I tightly intergated my code, and have tested it with words that have multiple same letters.  I have a cheat for the users at refresh.
 
 Code Example
-Show what the library does as concisely as possible, developers should be able to figure out how your project solves their problem by looking at the code example. Make sure the API you are showing off is obvious, and that your code is short and concise.
+
+This code has the capabilities of taking an array of random words via an API or with minimal modification, an array.  After that is complete, there are a few functions that are called to take input from a user to guess letters on the letter pad and disable that button from being called again.  Once the guesses are made the letter is then sorted between a True if it is included or a False if it isn't included in the word.
+    If the letter is in the word, the code will populate the letter in the solution boxes in the correct location given the word being solved.  And will loop through the whole word as some words have repeating letters. This will continue until all letters are solved, and once solved, the letter board will disappear, and "You Win!!" will appear.  To Play again click the play again button.
+    If the letter isn't in the word, the code will populate a piece of the hangman, it will also decrement the Errors remaining.  If the errors exceed 9 tries (the amount of body parts and tree pieces), the letter board will disapear, and "You Lose!!" with the word, will apear, and the game will be over.  To play again, you will click on the play again button, or refresh the page.
 
 Installation
-Provide step by step series of examples and explanations about how to get a development env running.
+You will need to navigate your web browser to the following link.
+https://mh44698.github.io/firstproject.io/ 
 
 API Reference
-Depending on the size of the project, if it is small and simple enough the reference docs can be added to the README. For medium size to larger projects it is important to at least provide a link to where the API reference docs live.
-
-Tests
-Describe and show how to run the tests with code examples.
+The API I used was rather simple. 
+https://random-word-api.herokuapp.com//word?key=R9LU41U1&number=1
+This is where I struggled with having a sustainable project.
+The key is constantly changing due to the sources API enivronment.  I have investigated alternative sources with better policies concerning Key requirements and unfortunately thier timeline didn't match up with my deadline for completion.
 
 How to use?
-If people like your project they’ll want to learn how they can use it. To do so include step by step guide to use your project.
+This is fairly straight forward.  Click on refresh and start hitting random letters until your mind has developed more educated guesses.  This will sharpen your skills as you continue to play.
 
 Contribute
-Let people know how they can contribute into your project. A contributing guideline will be a big plus.
+Feel free to submit pull requests that take into consideration the base code as a structure for operations and any enhancements should be those that improve either performance or fix known issues.  I will review changes and incorperate them as necessary.
 
 Credits
-Give proper credits. This could be a link to any repo which inspired you to build this project, any blogposts or links to people who contrbuted in this project.
+I have been blessed with the oppurtunity to develop this code with the help of my General Assembly mentors, as a member of the SEIR-1118 cohert, my peers have been very helpful.  I also have been lucky enough to learn to code JScript in the days of Google.  The following Links have helped get me past some very big hurdles.
 
-Anything else that seems useful
+Sources:
+https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Math/random
+
+https://www.computerhope.com/issues/ch001709.htm
+
+https://teamtreehouse.com/community/elementappendchild-returning-error-appendchild-is-not-a-function
+
+https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/includes
+
+https://stackoverflow.com/questions/5061353/how-to-create-a-keyboard-shortcut-for-an-input-button/5062680
+
+
 License
-A short snippet describing the license (MIT, Apache etc)
+Holmes' Hangman is not copywrited, trademarked, or protected in any way.  Take what you want and leave what you may, and have a great day.
 
-MIT © Yourname
+GA © Mark Holmes

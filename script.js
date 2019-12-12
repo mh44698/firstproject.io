@@ -152,13 +152,3 @@ function clearkeyboard(status){
 // Kenny says Api // Done - Also killed my on click Hint.
 
 
-////// Sources
-//     https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Math/random
-
-//https://www.computerhope.com/issues/ch001709.htm
-
-//https://teamtreehouse.com/community/elementappendchild-returning-error-appendchild-is-not-a-function
-
-// https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/includes
-
-// access keys https://stackoverflow.com/questions/5061353/how-to-create-a-keyboard-shortcut-for-an-input-button/5062680
