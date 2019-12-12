@@ -5,22 +5,29 @@ body {
     background-image: linear-gradient(red, yellow);
 }
 
-
-
 .hngmanpic {
     max-width: 30px;
     max-height: 200px;
     text-align: center;
 }
+
+.solutionGroup{
+    display: inline;
+    align-content: center;
+    text-align: center;
+}
+
 img {
     width: 200%;
     align-items: center;
     border: black;
     border-block-end-width: 1px;
 }
+
 .quickHelp{
     text-align: center;
 }
+
 .center {
     display: block;
     margin-left: auto;
@@ -34,7 +41,6 @@ img {
 
 .container {
     align-content: center;
-    
 }
 
 .badge-secondary {
@@ -64,6 +70,7 @@ img {
     width: auto;
     height: auto;   
 }
+
 .alpha {
     min-width: 20px;
     font-size: smaller;
@@ -75,25 +82,26 @@ img {
     grid-column: 1 / span 2;
     height: auto;
     width: auto;
-    /* display: inline-block; */
     margin: 10px 5px 10px 5px;
     display: flex;
     flex-wrap: wrap;
     background-color: brown;
 }
+
 .b {
     grid-column: 3 ;
     grid-row: 1 / span 2;
     width: auto;
-    height: auto;
-    
+    height: auto;    
 }
+
 .c {
     grid-column: 1 ;
     grid-row: 2 ;
     width: auto;
     height: auto;
 }
+
 .d {
     grid-column: 2 ;
     grid-row: 2 ;
@@ -117,24 +125,3 @@ img {
 .buttonDisable {
     background-color: black;
 }
-/* 
-//Styling the unordered list
-letters.style.margin = "15px";
-letters.style.padding = "15px";
-letters.style.display = "table";
-letters.style.textAlign = "center";
-letters.style.margin = "auto";
-
-//Styling the list items
-list.style.float = "left";
-list.style.margin = "1px";
-list.style.width = "35px";
-list.style.height = "30px";
-list.style.background = "#fff";
-list.style.color = "#00cc00";
-list.style.fontSize = "18px";
-list.style.listStyle = "none";
-list.style.borderRadius = "5px";
-list.style.paddingTop = "10px";
-list.style.cursor = "pointer";
-list.style.border = "solid 1px #fff";
