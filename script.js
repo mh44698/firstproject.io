@@ -24,7 +24,7 @@ const pics = ['1.jpeg','2.jpeg','3.jpeg','4.jpeg','5.jpeg','6.jpeg','7.jpeg','8.
 //getting a new API key 
 //'https://random-word-api.herokuapp.com/key?'
 
-let randomWord = ` https://random-word-api.herokuapp.com//word?key=TJ8DO0M9&number=1`
+let randomWord = ` https://random-word-api.herokuapp.com//word?key=V4C2PTUB&number=1`
 fetch(randomWord)
 .then(res => res.json())
 .then(word => {
