@@ -24,7 +24,7 @@ const pics = ['1.jpeg','2.jpeg','3.jpeg','4.jpeg','5.jpeg','6.jpeg','7.jpeg','8.
 //getting a new API key 
 //'https://random-word-api.herokuapp.com/key?'
 
-let randomWord = ` https://random-word-api.herokuapp.com//word?key=5D6E1PJ5&number=1`
+let randomWord = ` https://random-word-api.herokuapp.com//word?key=TJ8DO0M9&number=1`
 fetch(randomWord)
 .then(res => res.json())
 .then(word => {
@@ -63,7 +63,7 @@ elementsArray.forEach(function(elem) {
                                         //console.log("You Win! Have a cookie! Insert winning modal here")  
                                         // disable all keys
                                         // display no keys and populate message.
-                                        clearkeyboard("You Win!!!!")
+                                        clearkeyboard(`You Win!!!! Solution - ${word}`)
                                         // No more errors left
                                         var div = document.querySelector(".errors")
                                         div.innerText = ""                  
@@ -80,7 +80,7 @@ elementsArray.forEach(function(elem) {
         //console.log("Pic Address", picInc)
         document.querySelector(".hmpic").src = picInc;
         if(errorLeft === 0){
-        clearkeyboard("You Lose!!!!")
+        clearkeyboard(`You Loose!!!! Solution - ${word}`)
         //console.log("its over sucka insert loosing modal here")  
         // insert Loosing modal here
         } 
@@ -91,7 +91,6 @@ elementsArray.forEach(function(elem) {
        // elem.querySelector("click",).disabled = true
 })
 }
-// getLetter()
 
 ////////// End of game loop //////////////////////
 ////////// Start of modal conditions //////////////////////
@@ -145,7 +144,7 @@ function clearkeyboard(status){
 // Disable keystorkes/clicking on win/loose // Done
 // KeyStrokes - possible improvement
 // Modals // Not going to do this as of now.  I like the clean page.
-// Kenny says Api // Done
+// Kenny says Api // Done - Also killed my on click Hint.
 
 
 ////// Sources
