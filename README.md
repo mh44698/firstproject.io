@@ -38,16 +38,32 @@ This code has the capabilities of taking an array of random words via an API or 
             document.querySelector(".hmpic").src = picInc;
             if(errorLeft === 0){
             clearkeyboard(`You Loose!!!! Solution - ${word}`)
-            
+
 Installation
 You will need to navigate your web browser to the following link.
 https://mh44698.github.io/firstproject.io/ 
 
 API Reference
 The API I used was rather simple. 
-https://random-word-api.herokuapp.com//word?key=R9LU41U1&number=1
+<!-- https://random-word-api.herokuapp.com//word?key=R9LU41U1&number=1
 This is where I struggled with having a sustainable project.
-The key is constantly changing due to the sources API enivronment.  I have investigated alternative sources with better policies concerning Key requirements and unfortunately thier timeline didn't match up with my deadline for completion.
+The key is constantly changing due to the sources API enivronment.  I have investigated alternative sources with better policies concerning Key requirements and unfortunately thier timeline didn't match up with my deadline for completion. -->
+
+-- Update 
+fetch("https://xkubist-random-word-v1.p.rapidapi.com/run.cgi", {
+	"method": "GET",
+	"headers": {
+		"x-rapidapi-host": "xkubist-random-word-v1.p.rapidapi.com",
+		"x-rapidapi-key": "9e3dc6f827mshb4b7b898f5a0129p1941f4jsn120129c5a8fd",
+		"probability_selection": "",
+		"length_selection": "",
+		"word_selection": "",
+		"language_selection": ""
+	}
+})
+.then(res => res.json())
+
+This API is much faster in response and also after testing has a very stable key structure, that is more reliable.
 
 How to use?
 This is fairly straight forward.  Click on refresh and start hitting random letters until your mind has developed more educated guesses.  This will sharpen your skills as you continue to play.
