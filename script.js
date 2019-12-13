@@ -21,10 +21,18 @@ const pics = ['1.jpeg','2.jpeg','3.jpeg','4.jpeg','5.jpeg','6.jpeg','7.jpeg','8.
 // var word = words[Math.floor(Math.random() * words.length)]
 
 ////////////////// API Addition /////////////////
-// Key Generator https://random-word-api.herokuapp.com/key?
 
-let randomWord = `https://random-word-api.herokuapp.com//word?key=DAODHJAC&number=1`
-fetch(randomWord)
+fetch("https://xkubist-random-word-v1.p.rapidapi.com/run.cgi", {
+	"method": "GET",
+	"headers": {
+		"x-rapidapi-host": "xkubist-random-word-v1.p.rapidapi.com",
+		"x-rapidapi-key": "9e3dc6f827mshb4b7b898f5a0129p1941f4jsn120129c5a8fd",
+		"probability_selection": "",
+		"length_selection": "",
+		"word_selection": "",
+		"language_selection": ""
+	}
+})
 .then(res => res.json())
 .then(word => {
         word = word[0]
@@ -34,6 +42,25 @@ fetch(randomWord)
         ScreenPopulateSolution(word)
         console.log("this is the solution",word)
         })
+
+
+
+
+
+
+
+// Key Generator https://random-word-api.herokuapp.com/key?
+// let randomWord = `https://random-word-api.herokuapp.com//word?key=DAODHJAC&number=1`
+// fetch(randomWord)
+// .then(res => res.json())
+// .then(word => {
+//         word = word[0]
+//         remainingLetters = word.length;
+//         qhelp(word)
+//         getLetter(word)
+//         ScreenPopulateSolution(word)
+//         console.log("this is the solution",word)
+//         })
 
 ////////// Start of game loop //////////////////////
 ////// input listener ///////
