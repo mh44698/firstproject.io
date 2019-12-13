@@ -2,7 +2,7 @@
 This is the first GA project - Hang Man
 
 What makes your project stand out?
-I have a rather simple code to sort through good guesses and bad guess.  I tightly intergated my code, and have tested it with words that have multiple same letters.  I have a cheat for the users at refresh.
+I have a rather simple code to sort through good guesses and bad guess.  I have tightly intergated my code, and have tested it with words that have multiple same letters.  I have a cheat for the users at refresh.
 
 Code Example
 
