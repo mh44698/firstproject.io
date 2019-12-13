@@ -7,9 +7,38 @@ I have a rather simple code to sort through good guesses and bad guess.  I tight
 Code Example
 
 This code has the capabilities of taking an array of random words via an API or with minimal modification, an array.  After that is complete, there are a few functions that are called to take input from a user to guess letters on the letter pad and disable that button from being called again.  Once the guesses are made the letter is then sorted between a True if it is included or a False if it isn't included in the word.
+
+            if(word.includes(letter)){
+
     If the letter is in the word, the code will populate the letter in the solution boxes in the correct location given the word being solved.  And will loop through the whole word as some words have repeating letters. This will continue until all letters are solved, and once solved, the letter board will disappear, and "You Win!!" will appear.  To Play again click the play again button.
+
+            for (let index = 0; index < word.length; index++) {
+                if(letter == word[index]){
+                        goodCounter ++
+                        concat = `#block${index}`
+                        var position = document.querySelector(concat)
+                        position.innerText = letter
+                        if(word.length == goodCounter){  
+                                // disable all keys
+                                // display no keys and populate message.
+                                clearkeyboard(`You Win!!!! Solution - ${word}`)
+                                // No more errors left
+                                var div = document.querySelector(".errors")
+                                div.innerText = ""                  
+                                }
+
     If the letter isn't in the word, the code will populate a piece of the hangman, it will also decrement the Errors remaining.  If the errors exceed 9 tries (the amount of body parts and tree pieces), the letter board will disapear, and "You Lose!!" with the word, will apear, and the game will be over.  To play again, you will click on the play again button, or refresh the page.
 
+            }else{
+            errorCounter ++
+            errorLeft = 9 - errorCounter
+            var div = document.querySelector(".errors")
+            div.innerText = errorLeft
+            let picInc = `${errorCounter+1}.jpeg`
+            document.querySelector(".hmpic").src = picInc;
+            if(errorLeft === 0){
+            clearkeyboard(`You Loose!!!! Solution - ${word}`)
+            
 Installation
 You will need to navigate your web browser to the following link.
 https://mh44698.github.io/firstproject.io/ 
