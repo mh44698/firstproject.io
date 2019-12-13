@@ -29,7 +29,7 @@ const pics = ['1.jpeg','2.jpeg','3.jpeg','4.jpeg','5.jpeg','6.jpeg','7.jpeg','8.
 //         console.log(data)
 // })
 
-let randomWord = `https://random-word-api.herokuapp.com//word?key=K4EBDIXU&number=1`
+let randomWord = `https://random-word-api.herokuapp.com//word?key=NQDV1XK2&number=1`
 fetch(randomWord)
 .then(res => res.json())
 .then(word => {
